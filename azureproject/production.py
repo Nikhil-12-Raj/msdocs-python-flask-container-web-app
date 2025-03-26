@@ -1,8 +1,10 @@
 import os
 
-# SECURITY WARNING: keep the secret key used in production secret!
-# SECRET_KEY = 'flask-insecure-7ppocbnx@w71dcuinn*t^_mzal(t@o01v3fee27g%rg18fc5d@'
-# SECRET_KEY not needed for this web app
+# SECURITY WARNING: keep the secret key used in production secret! 
+# Do not embed secret in this file
+# For deployment to production, create an app setting, `SECRET_KEY`. Use this command to generate an appropriate value:
+# Generate a new one with `python -c "import secrets; print(secrets.token_hex())"`
+SECRET_KEY = os.getenv('SECRET_KEY')
 
 DEBUG = False
 ALLOWED_HOSTS = [os.environ['WEBSITE_HOSTNAME']] if 'WEBSITE_HOSTNAME' in os.environ else []
